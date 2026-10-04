@@ -1,11 +1,39 @@
-USE goit_rdb;
+CREATE SCHEMA IF NOT EXISTS LibraryManagement;
 
-SELECT *
-FROM order_details od
-INNER JOIN orders o       ON od.order_id = o.id
-INNER JOIN customers c    ON o.customer_id = c.id
-INNER JOIN employees e    ON o.employee_id = e.employee_id
-INNER JOIN shippers sh    ON o.shipper_id = sh.id
-INNER JOIN products p     ON od.product_id = p.id
-INNER JOIN categories cat ON p.category_id = cat.id
-INNER JOIN suppliers su   ON p.supplier_id = su.id;
+USE LibraryManagement;
+
+CREATE TABLE authors (
+    author_id   INT AUTO_INCREMENT PRIMARY KEY,
+    author_name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE genres (
+    genre_id   INT AUTO_INCREMENT PRIMARY KEY,
+    genre_name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE books (
+    book_id          INT AUTO_INCREMENT PRIMARY KEY,
+    title            VARCHAR(255) NOT NULL,
+    publication_year YEAR,
+    author_id        INT,
+    genre_id         INT,
+    FOREIGN KEY (author_id) REFERENCES authors (author_id),
+    FOREIGN KEY (genre_id) REFERENCES genres (genre_id)
+);
+
+CREATE TABLE users (
+    user_id  INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    email    VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE borrowed_books (
+    borrow_id   INT AUTO_INCREMENT PRIMARY KEY,
+    book_id     INT,
+    user_id     INT,
+    borrow_date DATE,
+    return_date DATE,
+    FOREIGN KEY (book_id) REFERENCES books (book_id),
+    FOREIGN KEY (user_id) REFERENCES users (user_id)
+);

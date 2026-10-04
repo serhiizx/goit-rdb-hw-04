@@ -3,7 +3,7 @@
 Домашнє завдання №4 з курсу «Реляційні бази даних: концепції та техніки» (GoIT).
 
 Завдання 1–2 виконано у схемі `LibraryManagement`, завдання 3–4 — у базі `goit_rdb`
-з даними теми 3. SQL-запити та скріншоти з MySQL Workbench лежать у `homework/`.
+з даними теми 3. SQL-запити лежать у `homework/`, скріншоти з MySQL Workbench — у `homework/images/`.
 
 ## Завдання 1
 
@@ -15,7 +15,7 @@ DDL: схема `LibraryManagement` з таблицями `authors`, `genres`, `
 Результат: 5 таблиць, 4 зовнішні ключі (`books` → `authors`, `genres`;
 `borrowed_books` → `books`, `users`).
 
-![Завдання 1](homework/p1.png)
+![Завдання 1](homework/images/p1_ddl.png)
 
 ## Завдання 2
 
@@ -23,7 +23,7 @@ DDL: схема `LibraryManagement` з таблицями `authors`, `genres`, `
 
 Файл: [`homework/p2_dml.sql`](homework/p2_dml.sql)
 
-![Завдання 2](homework/p2.png)
+![Завдання 2](homework/images/p2_dml.png)
 
 ## Завдання 3
 
@@ -33,7 +33,7 @@ DDL: схема `LibraryManagement` з таблицями `authors`, `genres`, `
 
 Результат: 518 рядків, стільки ж, скільки в `order_details`.
 
-![Завдання 3](homework/p3.png)
+![Завдання 3](homework/images/p3.png)
 
 ## Завдання 4.1
 
@@ -43,7 +43,7 @@ DDL: схема `LibraryManagement` з таблицями `authors`, `genres`, `
 
 Результат: 518.
 
-![Завдання 4.1](homework/p4_1.png)
+![Завдання 4.1](homework/images/p4_1.png)
 
 ## Завдання 4.2
 
@@ -58,10 +58,7 @@ DDL: схема `LibraryManagement` з таблицями `authors`, `genres`, `
 | `RIGHT JOIN employees` | 519 (+1 працівник без замовлень) |
 | `RIGHT JOIN customers`, далі `INNER` | 518 |
 
-![Завдання 4.2 А](homework/p4_2_1.png)
-![Завдання 4.2 Б](homework/p4_2_2.png)
-![Завдання 4.2 В](homework/p4_2_3.png)
-![Завдання 4.2 Г](homework/p4_2_4.png)
+![Завдання 4.2](homework/images/p4_2.png)
 
 ## Завдання 4.3–4.7
 
@@ -77,4 +74,4 @@ DDL: схема `LibraryManagement` з таблицями `authors`, `genres`, `
 | Seafood | 40 | 22.7000 |
 | Meat/Poultry | 31 | 21.5806 |
 
-![Завдання 4.3–4.7](homework/p4_3.png)
+![Завдання 4.3–4.7](homework/images/p4_3.png)
